@@ -1,3 +1,3 @@
 Finelli Fabrizio
 ------------------
-![Parcial](/umlParcial(1).png)
+![Parcial](umlParcial(1).png)
