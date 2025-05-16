@@ -1,0 +1,77 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>280</x><y>460</y><w>250</w><h>170</h></coordinates><panel_attributes>Artista
+--
+-nombre:String
+-apellido:String
+-
++Artista(nombre:String,apellido:String)
+
+_+sonIguales(a1:Artista,a2:Artista):boolean_
++getNombreApellido():String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>150</x><y>100</y><w>400</w><h>290</h></coordinates><panel_attributes>/ObraArte/
+--
+#artista:Artista
+#cantidadDeElementos:int
+#titulo:String
+#valor:double
+_#generadorDeElementos:Random_
+--
++ObraArte(titulo:String, valor:double, artista:Artista)
++ObraArte(titulo:String, valor:double, nombre:String, apellido:String)
+
++getCantidadDeElementos():int
+_-mostrar(obra:ObraArte):String_
+_+sonIguales(obra1:ObraArte, obra2:ObraArte):boolean_
+
++compareTo(obra:ObraArte):int
++equals(obj:Object):boolean
++toString():String</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>590</x><y>230</y><w>520</w><h>140</h></coordinates><panel_attributes>Pintura
+--
+-tecnica:TecnicaPintura
+--
++Pintura(titulo:String, valor:double, nombre:String, apellido:String, tecnica:TecnicaPintura)
+
++getValorComercial():double
++toString():String
++equals(obj:Object):boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>590</x><y>70</y><w>460</w><h>140</h></coordinates><panel_attributes>Escultura
+--
+-material:MaterialEscultura
+--
++Escultura(titulo:String, valor:double, artista:Artista, material:MaterialEscultura)
+
++getValorComercial():double
++toString():String
++equals(obj:Object):boolean</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1230</x><y>340</y><w>130</w><h>130</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+TecnicaPintura
+--
++ACRILICO
++ACUARELA
++OLEO</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1170</x><y>40</y><w>130</w><h>130</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+MaterialEscultura
+--
++MARMOL
++MADERA
++BRONCE</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1160</x><y>520</y><w>160</w><h>130</h></coordinates><panel_attributes>&lt;&lt;enum&gt;&gt;
+TipoValor
+--
++PINTURAS
++ESCULTURAS
++TODAS</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1200</x><y>210</y><w>180</w><h>70</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+IVendible
+--
+/+getValorComercial():double/</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>700</x><y>530</y><w>360</w><h>270</h></coordinates><panel_attributes>Museo
+--
+-capacidad:int
+-obras:ArrayList&lt;ObraArte&gt;
+--
++Museo()
++Museo(capacidad:int)
+
++sonIguales(obra:ObraArte):boolean
++agregar(obra:ObraArte):void
+-getValor(tipo:TipoValor):double
++ordenar():void
+
++getValorDePinturas():double
++getValorDeEsculturas():double
++getValorTotal():double
+
+_+mostrar(museo:Museo):String_</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>540</x><y>190</y><w>70</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;40;50;10</additional_attributes></element><element><id>Relation</id><coordinates><x>540</x><y>280</y><w>70</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;50;50</additional_attributes></element><element><id>Relation</id><coordinates><x>1040</x><y>180</y><w>180</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>160;50;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1100</x><y>250</y><w>120</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>100;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>1040</x><y>100</y><w>150</w><h>50</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>130;10;10;30</additional_attributes></element><element><id>Relation</id><coordinates><x>1100</x><y>350</y><w>150</w><h>80</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>130;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>1050</x><y>580</y><w>130</w><h>100</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>110;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>50</x><y>270</y><w>250</w><h>310</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>100;10;10;10;10;290;230;290</additional_attributes></element><element><id>Relation</id><coordinates><x>30</x><y>180</y><w>690</w><h>610</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>670;590;10;590;10;10;120;10</additional_attributes></element></diagram>
