@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Entidades;
 
 import java.util.Random;
@@ -38,7 +35,7 @@ public abstract class ObraArte implements Comparable<ObraArte>{
     {
         if(cantidadDeElementos == 0)
         {
-            cantidadDeElementos = generadorDeElementos.nextInt(10)+1;
+            this.cantidadDeElementos = generadorDeElementos.nextInt(10) + 1;
         }
         return this.cantidadDeElementos;
     }
@@ -90,7 +87,7 @@ public abstract class ObraArte implements Comparable<ObraArte>{
         sb.append(System.lineSeparator());
         sb.append("Artista: ").append(this.artista.getNombreApellido());
         sb.append(System.lineSeparator());
-        sb.append("Cantidad de elementos: ").append(this.cantidadDeElementos);
+        sb.append("Cantidad de elementos: ").append(this.getCantidadDeElementos());
         sb.append(System.lineSeparator());
         
         return sb.toString();
