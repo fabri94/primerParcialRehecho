@@ -44,10 +44,20 @@ public class Pintura extends ObraArte implements IVendible{
         }else if(obj != null && this.getClass() == obj.getClass())
         {
             Pintura otra = (Pintura)obj;
-            if(ObraArte.sonIguales(this, otra) && this.tecnica == otra.tecnica)
+            if(mismaPintura(otra))
             {
                 esIgual = true;
             }
+        }
+        return esIgual;
+    }
+    
+    private boolean mismaPintura(Pintura pintura)
+    {
+        boolean esIgual = false;
+        if(ObraArte.sonIguales(this, pintura)&& this.tecnica == pintura.tecnica)
+        {
+            esIgual = true;
         }
         return esIgual;
     }
