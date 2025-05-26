@@ -51,26 +51,12 @@ public class Escultura extends ObraArte implements IVendible{
     public boolean equals(Object obj)
     {
         boolean esIgual = false;
-        if(this == obj)
-        {
-            esIgual = true;
-        }else if(obj != null && this.getClass() == obj.getClass())
-        {
-            Escultura otra = (Escultura)obj;
-            if(mismaEscultura(otra))// metodo que encapsula el "if(ObraArte.sonIguales(this, escultura)&& this.material == escultura.material)" 
+        if(obj instanceof Escultura){
+            Escultura otra = (Escultura) obj;
+            if(super.equals(otra)&& this.material == otra.material)
             {
                 esIgual = true;
             }
-        }
-        return esIgual;
-    }
-    
-    private boolean mismaEscultura(Escultura escultura)
-    {
-        boolean esIgual = false;
-        if(ObraArte.sonIguales(this, escultura)&& this.material == escultura.material)
-        {
-            esIgual = true;
         }
         return esIgual;
     }
